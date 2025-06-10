@@ -1,0 +1,20 @@
+services:
+
+  # Default port assignments if not overridden by additional docker-compose files
+
+  cakephp:
+    ports:
+      - "19000:80"
+  
+  phpmyadmin:
+    ports:
+      - "19001:80"
+
+  mysql:
+    ports:
+      - "19004:3306"
+
+  minio:
+    ports:
+      - "19002:9000"
+      - "19003:9001"
