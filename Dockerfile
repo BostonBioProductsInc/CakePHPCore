@@ -1,3 +1,5 @@
+# START CAKE BUILD PROCESS #
+
 FROM php:8.2-apache
 
 WORKDIR /var/www/html/
@@ -35,7 +37,7 @@ RUN echo 'upload_max_filesize=100M' >> "$PHP_INI_DIR/php.ini-development"
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
 #set our application folder as an environment variable
-ENV APP_HOME /var/www/html
+ENV APP_HOME=/var/www/html
 
 #change the web_root to cakephp /var/www/html/webroot folder
 RUN sed -i -e "s/html/html\/cake\/webroot/g" /etc/apache2/sites-enabled/000-default.conf
